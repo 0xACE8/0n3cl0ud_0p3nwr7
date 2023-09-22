@@ -20,7 +20,7 @@ on:
         default: 'false'
 
 env:
-  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_URL: https://github.com/shiyu1314/openwrt
   REPO_BRANCH: master
   FEEDS_CONF: f33d5.c0nf.d3f4ul7
   CONFIG_FILE: 0n3cl0ud_0p3nwr7.c0nf
