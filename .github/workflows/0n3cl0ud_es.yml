@@ -24,7 +24,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: f33d5.c0nf.d3f4ul7
   CONFIG_FILE: 0n3cl0ud_es.c0nf
-  DIY_P1_SH: d1y-p4r71.sh
+  DIY_P1_SH: d1y-p4r71es.sh
   DIY_P2_SH: d1y-p4r72.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
