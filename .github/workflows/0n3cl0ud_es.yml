@@ -165,6 +165,7 @@ jobs:
           curl -L -o ./uboot.img https://github.com/shiyu1314/u-boot-onecloud/releases/download/build-20230901-0443/eMMC.burn.img
           ./AmlImg unpack ./uboot.img burn/
           echo "::endgroup::"
+          rm -rf openwrt/bin/targets/*/*/*.img
           gunzip openwrt/bin/targets/*/*/*.gz
           diskimg=$(ls openwrt/bin/targets/*/*/*.img)
           loop=$(sudo losetup --find --show --partscan $diskimg)
