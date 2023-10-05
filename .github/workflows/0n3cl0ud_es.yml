@@ -166,6 +166,7 @@ jobs:
           ./AmlImg unpack ./uboot.img burn/
           echo "::endgroup::"
           rm -rf openwrt/bin/targets/*/*/*.img
+          rm -rf openwrt/bin/targets/*/*/*.tar
           gunzip openwrt/bin/targets/*/*/*.gz
           diskimg=$(ls openwrt/bin/targets/*/*/*.img)
           loop=$(sudo losetup --find --show --partscan $diskimg)
