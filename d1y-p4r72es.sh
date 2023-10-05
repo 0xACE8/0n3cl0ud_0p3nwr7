@@ -8,7 +8,7 @@
 sed -i 's/192.168.1.1/192.168.177.90/g' package/base-files/files/bin/config_generate
 
 # Set password to PASSWORD
-sed -i 's/root:::0:99999:7:::/root:$1$4xKZB45Q$w0CPT5M6vBWbYNmSWuxfU.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
+#sed -i 's/root:::0:99999:7:::/root:$1$4xKZB45Q$w0CPT5M6vBWbYNmSWuxfU.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
 
 # Change ash to bash
 sed -i 's/ash/bash/g' package/base-files/files/etc/passwd
@@ -21,12 +21,12 @@ sed -i 's/ash/bash/g' package/base-files/files/etc/passwd
 
 # change some tips
 sed -i 's/"终端"/"TTYD 终端"/g' feeds/luci/applications/luci-app-ttyd/po/zh_Hans/ttyd.po
-sed -i 's/nas/services/g' feeds/luci/applications/luci-app-samba4/root/usr/share/luci/menu.d/luci-app-samba4.json
-sed -i 's/START=18/START=99/g' feeds/packages/net/dnscrypt-proxy2/files/dnscrypt-proxy.init
+#sed -i 's/nas/services/g' feeds/luci/applications/luci-app-samba4/root/usr/share/luci/menu.d/luci-app-samba4.json
+#sed -i 's/START=18/START=99/g' feeds/packages/net/dnscrypt-proxy2/files/dnscrypt-proxy.init
 
 # DHCP
-mkdir -p package/base-files/files/etc/dnsmasq.d
-wget --no-check-certificate -O package/base-files/files/etc/dnsmasq.d/accelerated-domains.china.conf "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf"
+#mkdir -p package/base-files/files/etc/dnsmasq.d
+#wget --no-check-certificate -O package/base-files/files/etc/dnsmasq.d/accelerated-domains.china.conf "https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf"
 
 # Boost UDP
 echo '# optimize udp' >>package/base-files/files/etc/sysctl.d/10-default.conf
@@ -58,8 +58,8 @@ wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/ar
 wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-96x96.png "https://raw.githubusercontent.com/0xACE8/0n3cl0ud_0p3nwr7/main/argon/icon/favicon-96x96.png"
 wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png "https://raw.githubusercontent.com/0xACE8/0n3cl0ud_0p3nwr7/main/argon/icon/ms-icon-144x144.png"
 
-rm -rf feeds/ace8/kcptun/Makefile
-wget --no-check-certificate -O feeds/ace8/kcptun/Makefile "https://raw.githubusercontent.com/0xACE8/kcptun/20230214/Makefile"
+#rm -rf feeds/ace8/kcptun/Makefile
+#wget --no-check-certificate -O feeds/ace8/kcptun/Makefile "https://raw.githubusercontent.com/0xACE8/kcptun/20230214/Makefile"
 
 # Change to my banner
 sudo rm package/base-files/files/etc/banner
