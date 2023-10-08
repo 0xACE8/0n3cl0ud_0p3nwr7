@@ -58,7 +58,8 @@ wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/ar
 wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-96x96.png "https://raw.githubusercontent.com/0xACE8/0n3cl0ud_0p3nwr7/main/argon/icon/favicon-96x96.png"
 wget --no-check-certificate -O feeds/ace8/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png "https://raw.githubusercontent.com/0xACE8/0n3cl0ud_0p3nwr7/main/argon/icon/ms-icon-144x144.png"
 
-
+rm -rf include/target.mk
+wget --no-check-certificate -O include/target.mk "https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/include/target.mk"
 
 #rm -rf feeds/ace8/kcptun/Makefile
 #wget --no-check-certificate -O feeds/ace8/kcptun/Makefile "https://raw.githubusercontent.com/0xACE8/kcptun/20230214/Makefile"
