@@ -38,6 +38,22 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space@main
+      with:
+        # this might remove tools that are actually needed,
+        # if set to "true" but frees about 6 GB
+        tool-cache: true
+
+        # all of these default to true, but feel free to set to
+        # "false" if necessary for your workflow
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        docker-images: true
+        swap-storage: true    
+        
     - name: Initialization environment
       env:
         DEBIAN_FRONTEND: noninteractive
@@ -164,7 +180,7 @@ jobs:
           sudo rm -rf ${boot_img}
           sudo rm -rf ${boot_img_mnt}
           sudo rm -rf ${rootfs_img_mnt}
-          sudo dd if=/dev/zero of=${boot_img} bs=1M count=400
+          sudo dd if=/dev/zero of=${boot_img} bs=1M count=512
           sudo mkfs.ext4 ${boot_img}
           sudo mkdir ${boot_img_mnt}
           sudo mkdir ${rootfs_img_mnt}
