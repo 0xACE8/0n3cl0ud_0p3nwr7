@@ -38,21 +38,21 @@ jobs:
     - name: Checkout
       uses: actions/checkout@main
 
-#    - name: Free Disk Space (Ubuntu)
-#      uses: jlumbroso/free-disk-space@main
-#      with:
+    - name: Free Disk Space (Ubuntu)
+      uses: jlumbroso/free-disk-space@main
+      with:
         # this might remove tools that are actually needed,
         # if set to "true" but frees about 6 GB
-#        tool-cache: true
+        tool-cache: false
 
         # all of these default to true, but feel free to set to
         # "false" if necessary for your workflow
-#        android: true
-#        dotnet: true
-#        haskell: true
-#        large-packages: true
-#        docker-images: true
-#        swap-storage: true    
+        android: true
+        dotnet: true
+        haskell: true
+        large-packages: true
+        docker-images: true
+        swap-storage: true    
         
     - name: Initialization environment
       env:
@@ -100,12 +100,12 @@ jobs:
         echo "# CONFIG_SHORTCUT_FE is not set" >> target/linux/generic/config-6.1
         sed -i 's/Turbo ACC 网络加速/网络加速/g' package/turboacc/luci-app-turboacc/po/zh-cn/turboacc.po
 
-#    - name: Cache
-#      uses: stupidloud/cachewrtbuild@main
-#      with:
-#        ccache: 'true'
-#        mixkey: 'oneim'
-#        prefix: 'openwrt'
+    - name: Cache
+      uses: stupidloud/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        mixkey: 'oneim'
+        prefix: 'openwrt'
 
     - name: Load custom feeds
       run: |
