@@ -68,6 +68,8 @@ set firewall.@defaults[0].forward='ACCEPT'
 set firewall.@defaults[0].fullcone6='1'
 delete firewall.@zone[0].network
 add_list firewall.@zone[0].network='lan'
+add_list firewall.@zone[0].network='lan2'
+add_list firewall.@zone[0].network='lan3'
 add_list firewall.@zone[0].network='lan6'
 EOF
 uci commit firewall
@@ -113,6 +115,22 @@ set network.lan6.device='@lan'
 set network.lan6.reqaddress='try'
 set network.lan6.reqprefix='auto'
 set network.lan6.dns='::1'
+set network.lan2=interface
+set network.lan2.proto='static'
+set network.lan2.device='br-lan'
+set network.lan2.ipaddr='192.168.177.91'
+set network.lan2.netmask='255.255.255.0'
+set network.lan2.gateway='192.168.177.1'
+set network.lan2.metric='1'
+set network.lan2.dns='127.0.0.1'
+set network.lan3=interface
+set network.lan3.proto='static'
+set network.lan3.device='br-lan'
+set network.lan3.ipaddr='192.168.177.92'
+set network.lan3.netmask='255.255.255.0'
+set network.lan3.gateway='192.168.177.1'
+set network.lan3.dns='127.0.0.1'
+set network.lan3.metric='2'
 EOF
 uci commit network
 /etc/init.d/network restart
