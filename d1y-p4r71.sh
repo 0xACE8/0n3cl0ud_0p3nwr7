@@ -4,4 +4,4 @@ sed -i '$a src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2.git;
 #sed -i '$a src-git quickstart https://github.com/0xACE8/openwrt-quickstart' feeds.conf.default
 #sed -i '$a src-git xd https://github.com/shiyu1314/onecloud-package' feeds.conf.default
 sed -i '$a src-git mosdns https://github.com/sbwml/luci-app-mosdns' feeds.conf.default
-svn co https://github.com/shiyu1314/openwrt-onecloud/trunk/device/target/linux/meson target/linux/meson
+git clone https://github.com/0xACE8/0n3cl0ud_c0r3 target/linux/meson
