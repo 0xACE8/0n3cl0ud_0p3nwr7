@@ -180,7 +180,7 @@ jobs:
           sudo rm -rf ${boot_img}
           sudo rm -rf ${boot_img_mnt}
           sudo rm -rf ${rootfs_img_mnt}
-          sudo dd if=/dev/zero of=${boot_img} bs=1M count=512
+          sudo dd if=/dev/zero of=${boot_img} bs=1M count=500
           sudo mkfs.ext4 ${boot_img}
           sudo mkdir ${boot_img_mnt}
           sudo mkdir ${rootfs_img_mnt}
@@ -205,7 +205,7 @@ jobs:
           ./AmlImg pack $burnimg burn/
           for f in openwrt/bin/targets/*/*/*.burn.img; do
             sha256sum "$f" >"${f}.sha"
-            xz --threads=0 --compress "$f"
+            xz -9 --threads=0 --compress "$f"
           done
           sudo rm -rf openwrt/bin/targets/*/*/*.img
           sudo rm -rf openwrt/bin/targets/*/*/*.gz
