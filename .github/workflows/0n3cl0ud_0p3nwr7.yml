@@ -158,6 +158,7 @@ jobs:
 
     - name: burn
       run: |
+          rm -rf openwrt/bin/targets/x86/64/immortalwrt-x86-64-generic-ext4-combined-efi.img.gz
           sudo apt install img2simg
           ver="v0.3.1"
           curl -L -o ./AmlImg https://github.com/hzyitc/AmlImg/releases/download/$ver/AmlImg_${ver}_linux_amd64
