@@ -5,7 +5,10 @@
 # Author: 0xACE7
 #=================================================
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.177.90/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.177.97/g' package/base-files/files/bin/config_generate
+
+# Add mt7612u such as Netgear-A6210
+
 
 # Set password to PASSWORD
 #sed -i 's/root:::0:99999:7:::/root:$1$4xKZB45Q$w0CPT5M6vBWbYNmSWuxfU.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
