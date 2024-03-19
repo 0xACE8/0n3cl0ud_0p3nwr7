@@ -120,8 +120,6 @@ jobs:
         ./scripts/feeds update -a
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-        rm -rf package/kernel/mt76
-        git clone https://github.com/0xACE8/openwrt-mt7612u package/kernel/mt76
         ./scripts/feeds install -a
         ./scripts/feeds install -a
 
